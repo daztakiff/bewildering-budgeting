@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bewildering Budgeting</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <h1>Bewildering Budgeting</h1>
+    <p>upload csv file here</p>
+    <form name="uploadForm">
+      <div>
+        <input id="upload-input" type="file" />
+      </div>
+      <div>
+        <label for="fileSize">Total Entries:</label>
+        <output id="fileSize">0</output>
+
+        <select id="file-source">
+          <option value="capitalone">Capital One</option>
+          <option value="chase">Chase</option>
+          <option value="wintrust">Wintrust Bank</option>
+        </select>
+      </div>
+      <div>
+        <p>processed entries: <output id="processedEntries">0</output></p>
+      </div>
+      <div class="transaction-results">
+        <output id="results-capital-one" class="transaction-card">Results...</output>
+        <output id="results-chase" class="transaction-card">Results...</output>
+        <output id="results-wintrust" class="transaction-card">Results...</output>
+      </div>
+    </form>
+
+    <script src="/papaparse/papaparse.min.js"></script>
+    <script type="module" src="./script.js"></script
+  </body>
+</html>

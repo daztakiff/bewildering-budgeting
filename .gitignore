@@ -1,0 +1,30 @@
+ Node modules installed by npm/yarn (present)
+node_modules/
+
+# npm/yarn logs (present when running)
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files you may have locally
+.env
+.env.*.local
+.env.local
+
+# macOS Finder
+.DS_Store
+
+# Editor / IDE (seen referenced)
+.vscode/
+.idea/
+
+# Runtime / debug logs
+logs/
+*.log
+debug.log
+
+# Build / test output (if you add build/test later)
+dist/
+build/
+coverage/
+.cache/
