@@ -1,5 +1,6 @@
 import { parseCapitalOneData } from "./parsers/capitalone.js";
 import { parseChaseData } from "./parsers/chase.js";
+import { parseWintrustData } from "./parsers/wintrust.js";
 
 const Source = {
     CAPITALONE: "capitalone",
@@ -48,6 +49,7 @@ function displayTransactionInfo(results) {
       break;
     case Source.WINTRUST:
       document.getElementById("results-wintrust").textContent = JSON.stringify(results.data, null, 2);
+      parseWintrustData(results)
       break;
     default:
       console.error("Unknown source:", selectedSource);

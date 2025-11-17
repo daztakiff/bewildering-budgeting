@@ -16,8 +16,10 @@ export const Category = {
   EMERGENCY_FUND: 10,
   INVESTMENTS: 11,
   MERCHENDISE: 12,
-  MISCCONSUMERISM: 13,
-  CREDIT
+  INCOME: 13,
+  CREDITCARDPAYMENT:14,
+  MISCCONSUMERISM: 15,
+  ZELLEVENMO: 16,
 }
 
 export class Transaction {
