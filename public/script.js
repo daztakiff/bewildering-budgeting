@@ -1,6 +1,6 @@
-import { parseCapitalOneData } from "./parsers/capitalone.js";
-import { parseChaseData } from "./parsers/chase.js";
-import { parseWintrustData } from "./parsers/wintrust.js";
+import { CapitalOneDataParser } from "./parsers/CapitalOneParser.js";
+import { ChaseDataParser } from "./parsers/ChaseParser.js";
+import { WintrustDataParser } from "./parsers/WintrustParser.js";
 
 const Source = {
     CAPITALONE: "capitalone",
@@ -38,20 +38,25 @@ document.getElementById("upload-input").addEventListener("change", function(even
   });
 
 function displayTransactionInfo(results) {
+  let transactionList;
   switch(selectedSource) {
     case Source.CAPITALONE:
-      document.getElementById("results-capital-one").textContent = JSON.stringify(results.data[0], null, 2);
-      parseCapitalOneData(results)
+      transactionList = new CapitalOneDataParser().parse(results);
+      console.log("Parsed Transactions:", transactionList);
+      document.getElementById("results-capital-one").textContent = JSON.stringify(transactionList, null, 2);
       break;
     case Source.CHASE:
-      document.getElementById("results-chase").textContent = JSON.stringify(results.data[0], null, 2);
-      parseChaseData(results)
+      transactionList = new ChaseDataParser().parse(results);
+      console.log("Parsed Transactions:", transactionList);
+      document.getElementById("results-chase").textContent = JSON.stringify(transactionList, null, 2);
       break;
     case Source.WINTRUST:
-      document.getElementById("results-wintrust").textContent = JSON.stringify(results.data, null, 2);
-      parseWintrustData(results)
+      transactionList = new WintrustDataParser().parse(results);
+      console.log("Parsed Transactions:", transactionList);
+      document.getElementById("results-wintrust").textContent = JSON.stringify(transactionList, null, 2);
       break;
     default:
+      transactionList = []
       console.error("Unknown source:", selectedSource);
   }
 }

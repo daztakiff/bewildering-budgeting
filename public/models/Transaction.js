@@ -1,29 +1,29 @@
 export const PurchaseType = {
-  CREDIT: 1,
-  DEBIT: 2,
+  CREDIT: "credit",
+  DEBIT: "debit",
 };
 
 export const Category = {
-  HOUSING: 1,
-  FOOD: 2,
-  TRANSPORTATION: 3,
-  UTILITIES: 4,
-  MEDICAL: 5,
-  INSURANCE: 6,
-  DINING: 7,
-  VACATION: 8,
-  EVENTS: 9,
-  EMERGENCY_FUND: 10,
-  INVESTMENTS: 11,
-  MERCHENDISE: 12,
-  INCOME: 13,
-  CREDITCARDPAYMENT:14,
-  MISCCONSUMERISM: 15,
-  ZELLEVENMO: 16,
-}
+  HOUSING: "housing",
+  FOOD: "food",
+  TRANSPORTATION: "transportation",
+  UTILITIES: "utilities",
+  MEDICAL: "medical",
+  INSURANCE: "insurance",
+  DINING: "dining",
+  VACATION: "vacation",
+  EVENTS: "events",
+  EMERGENCY_FUND: "emergency_fund",
+  INVESTMENTS: "investments",
+  MERCHENDISE: "merchendise",
+  INCOME: "income",
+  CREDITCARDPAYMENT: "creditcardpayment",
+  MISCCONSUMERISM: "miscconsumerism",
+  ZELLEVENMO: "zellevenmo",
+};
 
 export class Transaction {
-  constructor(id, date, amount, purchaseType, description = "", category = MISCCONSUMERISM, memo = "") {
+  constructor(id, date, amount, purchaseType, description = "", category = Category.MISCCONSUMERISM, memo = "") {
     this.id = id;
     this.date = date;
     this.amount = amount;
